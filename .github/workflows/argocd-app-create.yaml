@@ -18,7 +18,7 @@ jobs:
       - name: UPSERT Entity
         uses: port-labs/port-github-action@v1
         with:
-          identifier: ${{ inputs.service_name }}-${{ env.SHA_SHORT }}
+          identifier: ${{ inputs.service_name }}-${{ github.run_id }}
           blueprint: argocdApp
           properties: |-
             {
