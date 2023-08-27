@@ -19,11 +19,24 @@ jobs:
         uses: port-labs/port-github-action@v1
         with:
           identifier: ${{ inputs.service_name }}-${{ github.run_id }}
+          title: Some Title
+          team: []
+          icon: DefaultBlueprint
           blueprint: argocdApp
           properties: |-
             {
               "gitRepo": "https://github.com/channyein87/demo-getport.git",
               "gitPath": "helm-guestbook",
+              "syncStatus": "synced",
+              "gitRev": "main"
+            }
+          relations: |-
+            {
+              "argocdProject": "default-argocd-my-cluster",
+              "workload": [
+                "app1-helm-guestbook-Deployment-default-my-cluster"
+              ],
+              "destinationNamespace": "default"
             }
           clientId: ${{ secrets.CLIENT_ID }}
           clientSecret: ${{ secrets.CLIENT_SECRET }}
