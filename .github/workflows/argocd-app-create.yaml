@@ -20,7 +20,6 @@ jobs:
         with:
           identifier: ${{ inputs.service_name }}-${{ github.run_id }}
           title: Some Title
-          team: []
           icon: DefaultBlueprint
           blueprint: argocdApp
           properties: |-
