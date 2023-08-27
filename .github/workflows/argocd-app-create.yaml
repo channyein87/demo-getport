@@ -35,7 +35,7 @@ jobs:
               "workload": [
                 "app1-helm-guestbook-Deployment-default-my-cluster"
               ],
-              "destinationNamespace": "default"
+              "destinationNamespace": "default-my-cluster"
             }
           clientId: ${{ secrets.CLIENT_ID }}
           clientSecret: ${{ secrets.CLIENT_SECRET }}
